@@ -41,7 +41,9 @@ message(STATUS "")
 
 # if only a single rmw impl. is available or poco is not available
 # this package will directly reference the default rmw impl.
-if(NOT RMW_IMPLEMENTATIONS MATCHES ";" OR NOT Poco_FOUND)
+
+# DO NOT MERGE (HACK): Dunno why this logic is this way?
+if(FALSE)  #NOT RMW_IMPLEMENTATIONS MATCHES ";" OR NOT Poco_FOUND)
   set(RMW_IMPLEMENTATION_SUPPORTS_POCO FALSE)
 
 else()
